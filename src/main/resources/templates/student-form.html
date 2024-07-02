@@ -9,30 +9,29 @@
 <body>
 	<h3>Student Registration Form</h3>
 	<form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
-	First Name: <input type="text" th:field="*{firstName}" />
-	<br><br>
+		First Name: <input type="text" th:field="*{firstName}" />
+		<br><br>
 
-	Last Name: <input type="text" th:field="*{lastName}" />
-	<br><br>
+		Last Name: <input type="text" th:field="*{lastName}" />
+		<br><br>
 
-	Country:
-	<select th:field="*{country}">
-		<option th:each="country : ${countries}" th:value="${country}" th:text="${country}" />
-	</select>
-	<br><br>
+		Country:
+		<select th:field="*{country}">
+			<option th:each="country : ${countries}" th:value="${country}" th:text="${country}" />
+		</select>
+		<br><br>
 
-	Favorite Programming Language:
-	<input type="radio" th:field="*{favoriteLanguage}" th:each="lang : ${languages}" th:value="${lang}"
-		th:text="${lang}" />
-	<br><br>
+		Favorite Programming Language:
+		<input type="radio" th:field="*{favoriteLanguage}" th:each="lang : ${languages}" th:value="${lang}"
+			th:text="${lang}" />
+		<br><br>
 
-	Favorite Operating Systems:
-	<input type="checkbox" th:field="*{favoriteSystems}" th:value="Linux">Linux</input>
-	<input type="checkbox" th:field="*{favoriteSystems}" th:value="macOS">macOS</input>
-	<input type="checkbox" th:field="*{favoriteSystems}" th:value="'Microsoft Windows'">Microsoft Windows</input>
-	<br><br>
+		Favorite Operating Systems:
+		<input type="checkbox" th:field="*{favoriteSystems}" th:each="system : ${systems}" th:value="${system}"
+			th:text="${system}" />
+		<br><br>
 
-	<input type="submit" value="Submit" />
+		<input type="submit" value="Submit" />
 	</form>
 </body>
 
